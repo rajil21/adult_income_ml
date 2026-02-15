@@ -40,3 +40,36 @@ X_train, X_test, y_train, y_test = train_test_split(
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
+
+#Models configuration
+models = {
+    "lr": LogisticRegression(max_iter=1000),
+    "dt": DecisionTreeClassifier(),
+    "knn": KNeighborsClassifier(),
+    "nb": GaussianNB(),
+    "rf": RandomForestClassifier(),
+    "xgb": XGBClassifier(eval_metric='logloss')
+}
+
+results = []
+
+for name, model in models.items():
+    model.fit(X_train, y_train)
+
+    joblib.dump(model, f"models/{name}.pkl")
+
+    y_pred = model.predict(X_test)
+    y_prob = model.predict_proba(X_test)[:, 1]
+
+    results.append([
+        name,
+        accuracy_score(y_test, y_pred),
+        roc_auc_score(y_test, y_prob),
+        precision_score(y_test, y_pred),
+        recall_score(y_test, y_pred),
+        f1_score(y_test, y_pred),
+        matthews_corrcoef(y_test, y_pred)
+    ])
+
+cols = ["Model", "Accuracy", "AUC", "Precision", "Recall", "F1", "MCC"]
+print(pd.DataFrame(results, columns=cols))
