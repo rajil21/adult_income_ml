@@ -13,7 +13,7 @@ The Adult Income dataset is a well-known real-world classification dataset used 
 - Number of Features: 14
 - Target Variable: income
   - <=50K ( equal or greater than 50k )
-  - >50K ( less than 50k )
+  - '>' 50K ( less than 50k )
 - Feature Types:
   - Numerical: age, fnlwgt, education-num, capital-gain, capital-loss, hours-per-week
   - Categorical: workclass, education, marital-status, occupation, relationship, race, sex, native-country
