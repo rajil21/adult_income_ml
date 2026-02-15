@@ -78,6 +78,7 @@ XGBoost delivered the best performance across all evaluation metrics. It achieve
 
 The deployed Streamlit application provides an interactive interface with:
 
+- Test CSV dataset Download option
 - CSV dataset upload option
 - Model selection dropdown
 - Display of evaluation metrics:
