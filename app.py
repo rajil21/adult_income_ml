@@ -18,10 +18,15 @@ whether an individual's income exceeds $50K using the Adult Income dataset.
 """
 )
 
-st.write("Predict whether a person earns >50K or <=50K")
+st.markdown("### Download Sample Test Dataset")
 
-
-
+with open("test_data.csv", "rb") as file:
+    st.download_button(
+        label="Download test_data.csv",
+        data=file,
+        file_name="test_data.csv",
+        mime="text/csv"
+    )
 
 # Model selection
 model_display = st.selectbox(
