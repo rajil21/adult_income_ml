@@ -1,5 +1,12 @@
 # Adult Income Classification using Machine Learning Models
 
+Live Streamlit App:
+https://adultincomeml-nvyau9jlfspdj5ymvkazpo.streamlit.app/
+
+GitHub Repository:
+https://github.com/rajil21/adult_income_ml
+
+
 ## Problem Statement
 The objective of this project is to predict whether an individual earns more than $50K per year based on demographic and employment-related attributes. Multiple machine learning classification models are implemented, evaluated, and compared. An interactive Streamlit web application is developed to demonstrate predictions and performance metrics.
 
@@ -12,8 +19,8 @@ The Adult Income dataset is a well-known real-world classification dataset used 
 - Total Instances: ~48,000
 - Number of Features: 14
 - Target Variable: income
-  - <=50K ( equal or greater than 50k )
-  - '>' 50K ( less than 50k )
+  - <=50K : income less than or equal to 50K
+  - '>'50K  : income greater than 50K
 - Feature Types:
   - Numerical: age, fnlwgt, education-num, capital-gain, capital-loss, hours-per-week
   - Categorical: workclass, education, marital-status, occupation, relationship, race, sex, native-country
